@@ -145,7 +145,7 @@ router.post("/", auth.required, function(req, res, next) {
       }
 
       if (!req.body.item.image) {
-        return res.sendStatus(200);
+        req.body.item.image = "";
       }
 
       var item = new Item(req.body.item);
