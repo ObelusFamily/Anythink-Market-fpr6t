@@ -8,7 +8,7 @@ import {
   ITEM_PAGE_LOADED,
   ITEM_PAGE_UNLOADED,
 } from "../../constants/actionTypes";
-import PlaceHolderImg from '../../imgs/placeholder.png';
+import PlaceHolderImg from "../../imgs/placeholder.png";
 
 const mapStateToProps = (state) => ({
   ...state.item,
