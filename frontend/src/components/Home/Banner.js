@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../imgs/logo.png";
 import agent from "../../agent";
 
 const Banner = (props) => {
+  const [isShowSearch, setIsShowSearch] = useState(false);
   const handleChange = (ev) => {
     const title = ev.target.value;
     if (title.length < 3) {
@@ -21,14 +22,21 @@ const Banner = (props) => {
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
         <div>
-          <span id="get-part">A place to get</span>
-          <input
-            id="search-box"
-            type="text"
-            name="title"
-            placeholder="What is it that you truly desire?"
-            onChange={handleChange}
-          />
+          <span>
+            A place to{" "}
+            <span id="get-part" onClick={() => setIsShowSearch(true)}>
+              get
+            </span>
+          </span>
+          {isShowSearch && (
+            <input
+              id="search-box"
+              type="text"
+              name="title"
+              placeholder="What is it that you truly desire?"
+              onChange={handleChange}
+            />
+          )}
           <span> the cool stuff.</span>
         </div>
       </div>
