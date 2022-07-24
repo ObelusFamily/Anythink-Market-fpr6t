@@ -2,6 +2,7 @@ import {
   ITEM_FAVORITED,
   ITEM_UNFAVORITED,
   SET_PAGE,
+  APPLY_TITLE_FILTER,
   APPLY_TAG_FILTER,
   HOME_PAGE_LOADED,
   HOME_PAGE_UNLOADED,
@@ -36,6 +37,7 @@ const reducer = (state = {}, action) => {
         itemsCount: action.payload.itemsCount,
         currentPage: action.page,
       };
+    case APPLY_TITLE_FILTER:
     case APPLY_TAG_FILTER:
       return {
         ...state,
